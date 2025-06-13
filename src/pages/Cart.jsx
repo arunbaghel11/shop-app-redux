@@ -14,12 +14,13 @@ const Cart = () => {
   useEffect(() => {
     setTotalAmount(cart.reduce((acc, curr) => acc + curr.price, 0));
   }, [cart]);
-  const stripePromise = loadStripe("pk_test_51RZAQlF0VxwXAXKurUJqUwjaFTp5gtbBLIwUueeS5QFvSbf6CZTGZimk5Nmu3wQnWkuxh3qNvn0kCdN9W6D8GA4L000xfwe7FV");
+ const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 const handleCheckout = async () => {
   const stripe = await stripePromise;
 
-  const response = await fetch("http://localhost:4000/create-checkout-session", {
+ const response = await fetch("https://shop-app-redux.onrender.com/create-checkout-session", {
+  
     method: "POST",
     headers: {
       "Content-Type": "application/json",
