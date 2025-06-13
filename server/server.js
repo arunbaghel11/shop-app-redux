@@ -30,8 +30,8 @@ app.post("/create-checkout-session", async (req, res) => {
       payment_method_types: ["card"],
       line_items,
       mode: "payment",
-      success_url: "http://localhost:3000/success",
-      cancel_url: "http://localhost:3000/cart",
+      success_url: "https://jolly-cascaron-bcdeb1.netlify.app/success",
+      cancel_url: "https://jolly-cascaron-bcdeb1.netlify.app/cart",
     });
 
     res.json({ id: session.id });
