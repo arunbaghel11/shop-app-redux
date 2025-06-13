@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background-color: #fff;
+}
+/* Tailwind custom classes or inside index.css if not using Tailwind */
+
+.input-style {
+  @apply w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400 transition;
+}
+
+.btn-style {
+  @apply w-full bg-purple-600 text-white py-2 rounded-md hover:bg-purple-700 transition duration-300 font-semibold;
+}
+
